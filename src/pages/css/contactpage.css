@@ -1,0 +1,216 @@
+#contact {
+  width: 100%;
+}
+.banner {
+  background: url('/contact/contactbg.jpeg') center center / cover;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+.banner img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+
+.banner-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.678);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text h3 {
+  font-size: 4vw;
+  line-height: 110%;
+  margin-bottom: 4%;
+}
+
+.banner-text p {
+  font-size: 1.2vw;
+  color: rgba(255, 255, 255, 0.872);
+}
+
+#cards {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 4%;
+  padding: 4%;
+}
+
+#cards .contact-card {
+  width: 400px;
+  background-color: #f0f0ff;
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+#cards .contact-card h3 {
+  font-size: 28px;
+  margin: 8px 0px 16px;
+}
+
+#cards .contact-card p {
+  font-weight: 400;
+  margin-bottom: 16px;
+  width: 80%;
+}
+#cards .contact-card a {
+  color: #5d5dff;
+}
+
+#form {
+  width: 100%;
+  padding: 4%;
+}
+
+#form h3 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+#form p {
+  font-size: 18px;
+  margin-bottom: 36px;
+}
+
+.splitter {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4%;
+  justify-content: space-between;
+}
+
+.contact-form {
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+.contact-form div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6px;
+}
+
+.contact-form div label {
+  font-weight: 500;
+  color: rgb(67, 60, 60);
+}
+
+.contact-form div input,
+select,
+textarea {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.contact-form div input,
+select,
+textarea:focus {
+  outline: none;
+  /* border: 1px solid #5D5DFF; */
+}
+
+.contact-form .agree {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: flex-end;
+}
+
+.contact-form button {
+  width: fit-content;
+  border-radius: 6px;
+  color: white;
+  background-color: #5d5dff;
+  padding: 12px 24px;
+  border: none;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+.splitter .group-images {
+  width: 50%;
+  height: 95%;
+}
+
+.splitter .group-images img {
+  width: 100%;
+  height: auto;
+}
+
+/* Medium devices (landscape tablets, 770px and up) */
+@media only screen and (max-width: 770px) {
+
+  .banner{
+    width: 100%;
+    height: 300px;
+  }
+
+
+  #cards {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .banner-text h3 {
+    font-size: 6vw;
+    line-height: 110%;
+    margin-bottom: 4%;
+  }
+  
+  .banner-text p {
+    font-size: 2vw;
+    color: rgba(255, 255, 255, 0.872);
+  }
+
+  .splitter {
+    width: 100%;
+    display: flex;
+    flex-flow: column-reverse;
+    gap: 4%;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .splitter .group-images{
+    width: 100%;
+  }
+
+  .splitter .contact-form{
+    width: 100%;
+  }
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .banner-text h3{
+    font-size: 2.5rem;
+  }
+  .banner-text p{
+    font-size: .8rem;
+  }
+ 
+  #cards {
+    flex-flow: column;
+    justify-content: center;
+  }
+}

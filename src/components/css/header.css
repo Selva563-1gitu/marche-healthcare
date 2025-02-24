@@ -1,0 +1,266 @@
+.logo-container1 {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease-in-out;
+  
+  /* 🔥 Bigger circle */
+  width: 120px;  /* Increased size */
+  height: 120px; /* Increased size */
+  background-color: rgba(255, 255, 255, 1); /* White circle */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 🔥 When navbar expands, move the logo up and add glow */
+.navbar-expanded .logo-container1 {
+  top: 0;
+  transform: translateY(50%);
+  border-radius: 50%; 
+  
+  /* Slightly transparent white glow */
+  background-color: rgba(255, 255, 255, 0.9);
+  
+  /* 🔥 Bigger glow effect to spread like a lamp */
+  
+}
+
+/* 🔥 Keep the logo the same size */
+.logo-container1 img {
+  width: 110px;  /* Adjust logo size inside the circle */
+  height: auto;
+  object-fit: contain; /* Prevents distortion */
+}
+
+
+/* Optional: If you want a subtle hover effect */
+.logo-container1:hover {
+ 
+  box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.4);
+}
+
+
+.logo {
+  height: 50px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hide logo when navbar is scrolled */
+.hide-logo {
+  opacity: 0;
+  transform: scale(0);
+}
+
+
+
+body {
+  padding-top: 60px; /* Same as navbar height */
+}
+body.scrolled {
+  padding-top: 40px; /* Adjust for smaller navbar */
+}
+
+.navbar {
+  width: 100%; /* Full width initially */
+  background: #FFFFFF; /* Dark background */
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%; /* Ensure it stays centered */
+  transform: translateX(-50%); /* Prevents shifting */
+  transition: all 0.4s ease-in-out;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Default Navbar */
+
+/* Navbar Shrinks when Scrolling */
+
+.navbar-small {
+  width: 45%; /* Shrink width */
+  justify-content: center;
+  align-items: center;
+  padding: 1px 0;
+  border-radius: 30px; /* Rounded edges */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f0f0f0; /* Slight transparency */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+
+  
+}
+/* Navigation Links */
+.nav-link {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  transition: font-size .2s ease-in-out;
+  &.onpage{
+    color: var(--primary);
+  }
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 15px;
+  
+  transition: color 0.3s ease-in-out;
+}
+/* Main menu items */
+
+.nav-item:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.nav-item:hover {
+  color: #ffcc00;
+}
+.navbar-small .nav-link {
+  font-size: 15px;
+
+}
+
+/* Submenu */
+.submenu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-in-out, transform 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+
+
+/* ====== SUBMENU STYLE (Removed background) ====== */
+.submenu {
+  position: absolute;
+  flex-wrap: wrap;
+  top: 40px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+.submenu-item {
+  font-size: 16px;
+  transform: translateY(10px);
+  padding: 8px 15px;
+  color: white;
+  white-space: nowrap;
+  transition: opacity 0.4s ease, transform 1s ease;
+}
+/* ====== INDIVIDUAL SUBMENU ITEMS ANIMATION ====== */
+.submenu-item {
+  display: inline-block; /* Ensure items stay on one line */
+  white-space: nowrap;
+ 
+  font-size: 16px;
+  padding: 5px 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-in-out, transform 1s ease-in-out;
+}
+
+
+
+/* When hovered, show submenu */
+li:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+li:hover .submenu-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Normal state */
+.navbar:not(.navbar-expanded) {
+  height: 60px;
+}
+
+/* Expanded state when hovering */
+.navbar.navbar-expanded {
+  height: 250px;
+  align-items: flex-start ;
+  background-color: #560cf5;
+ 
+  
+}
+.navbar-expanded .nav-link, 
+.navbar-expanded .submenu-link {
+  color: #f0f0f0;
+}
+
+.navbar-small .nav-item {
+  font-size: 12px;
+  gap : 10px
+}
+.navbar-small .nav-list {
+  
+  gap : 10px
+}
+/* ====== NAV LIST STYLE ====== */
+
+
+
+
+
+/* Animate each sub-item one-by-one */
+.submenu.show .submenu-item {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Delay each item to appear one after another */
+
+/* Fade out & slide out each sub-item one by one */
+.submenu.hide .submenu-item {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.submenu-item:hover {
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,176 @@
+.spacedivider {
+  margin-top: 4em;
+}
+.headline {
+  margin: auto;
+  display: flex;
+  width: auto;
+  padding: 4% 2%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 80px;
+}
+.headline .page-title {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: .4em;
+}
+
+.headline .social-links {
+  text-align: center;
+}
+
+.headline .social-links a :hover {
+  color: #560cf5;
+  fill: #560cf5;
+}
+
+.headline .social-links svg {
+  border-radius: 64px;
+  margin: 0 1em;
+}
+
+.headline div {
+  text-align: left;
+}
+
+.headline div p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+}
+
+.headline div h2 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+}
+
+.headline .team-button {
+  padding: .6em;
+  margin: 0 auto;
+  border-radius: 17px;
+  border: 1px solid #5d5dff;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.headline .team-button button {
+  font-family: 'Roboto';
+  color: #000;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  background: #fff;
+  text-align: center;
+}
+
+.headline .team-button .active {
+  background: #c3c3ff;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 25%;
+  padding: 15px;
+  gap: 20px;
+}
+
+.text-line {
+  padding: 12px;
+  border-left: 2px solid black;
+}
+
+.text-line p {
+  font-family: Inter;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.latest-news {
+  display: flex;
+  padding: 112px 64px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.latest-news-btn  {
+  font-family: Roboto;
+  color: #560cf5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid #560cf5;
+}
+
+.latest-news .title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title h2 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.title p {
+  font-family: Roboto;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card-box {
+  margin: auto;
+}
+
+.post-contianer{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.post-contianer .title{
+  text-align: center;
+   font-size: 48px;
+   padding-bottom:.8em ;
+}
+
+.post-contianer .blog-footer {
+  width: 40%;
+}
+.blog-footer .author-name{
+  font-weight: 600;
+}
+.multicarousel .blog-card{
+  width: 30%;
+}
+
+.media-center .social-links{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
