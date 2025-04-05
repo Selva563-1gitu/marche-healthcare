@@ -49,9 +49,11 @@
 }
 
 #user-full-detials .social-links {
+  margin-left: 10px;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 25px;
+  margin-top:-30px;
 }
 #user-full-detials .user-full-image {
   width: 600px;
@@ -170,4 +172,7 @@ padding-bottom: 3em;
   }
 
  
+}
+.userdetailslogos:hover{
+  fill: var(--primary);
 }

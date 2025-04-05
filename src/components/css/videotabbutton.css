@@ -1,5 +1,5 @@
 .video-tabbutton {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -11,6 +11,6 @@
 }
 
 .video-tabbutton-active{
-  background-color: #5d5dff;
+  background-color: var(--primary);
   color: #fff;
 }

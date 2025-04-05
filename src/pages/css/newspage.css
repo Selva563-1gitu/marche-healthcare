@@ -1,23 +1,51 @@
 .spacedivider {
-  margin-top: 4em;
+  margin-top: -4em;
+}
+.newsbanner{
+  height: 500px;
+  width: 100%;
+  background-image: url("/news-banner.jpg");
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1{
+    color: white;
+    font-size: var(--font-size-banner-primary);
+    margin-bottom: 4%;
+  }
+  .desc{
+    color: white;
+    font-size: var(--font-size-paragraph-primary);
+    font-weight: 600;
+  }
 }
 .headline {
   margin: auto;
   display: flex;
   width: auto;
-  padding: 4% 2%;
+  /* padding: 8% 2%; */
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 80px;
+  gap: 50px;
+  /* background-image:url("/keyboard-with-social-media-icons.jpg"); */
+  /* background-attachment: fixed; */
+  background-position: right;
+  background-size: cover;
+  /* height: 500px; */
 }
 .headline .page-title {
   text-align: center;
-  font-family: Roboto;
-  font-size: 88px;
+  font-size: var(--font-size-heading-primary);
   font-style: normal;
   font-weight: 700;
+  margin-top: -.65em;
   margin-bottom: .4em;
+  color: black;
 }
 
 .headline .social-links {
@@ -32,6 +60,7 @@
 .headline .social-links svg {
   border-radius: 64px;
   margin: 0 1em;
+  color: white;
 }
 
 .headline div {
@@ -54,7 +83,7 @@
   text-align: center;
 }
 
-.headline .team-button {
+.team-button {
   padding: .6em;
   margin: 0 auto;
   border-radius: 17px;
@@ -64,7 +93,7 @@
   justify-content: space-around;
 }
 
-.headline .team-button button {
+.team-button button {
   font-family: 'Roboto';
   color: #000;
   border-radius: 10px;
@@ -160,6 +189,11 @@
 
 .post-contianer .blog-footer {
   width: 40%;
+  
+}
+.card-social{
+  height: 50px;
+  width: 50px !important;
 }
 .blog-footer .author-name{
   font-weight: 600;
@@ -172,5 +206,121 @@
   width: fit-content;
   margin: 0 auto;
 }
+.blogs-cards-container{
+  margin: 50px var(--page-margin-primary) 0;
+  &:hover{
+    .card-social{
+      fill: var(--primary);
+    }
+  }
+}
+.blog-card-1 {
+  width: 100%;
+  display: flex;
+  height: 433px;
+  padding: 0.7em;
+  justify-content: center;
+  border-radius: var(--border-radius-primary);
+  background: #f0f0ff;
+}
+.blog-image-1 {
+  margin-left: 0px;
+  width: 600px;
+  height: 410px;
+  flex-shrink: 0;
+  border-radius: var(--border-radius-primary);
+  background: url("../assets/blog-image1.png") lightgray 50% / cover no-repeat;
+}
+.blog-content-inside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 1em;
+}
+.blog-category {
+  align-self: stretch;
+  color: var(--Black, #000);
+  /* font-family: Roboto; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+.blog-title {
+  color: var(--Black, #000);
+  /* font-family: Roboto; */
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+.blog-text {
+  color: var(--Black, #000);
+  /* font-family: Roboto; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.blog-content {
+  padding: 1.8em;
+}
+.read-more {
+  color: var(--Black, #000);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+.author {
+  width: 48px;
+  height: 48px;
+  border-radius: 31px;
+  background: url("../assets/author.png") lightgray 0px 0px / 100% 100%
+    no-repeat;
+}
+.author-name {
+  color: var(--Black, #000);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 21px */
+}
+.author-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+.blog-date {
+  color: var(--Black, #000);
 
+  /* Text/Small/Normal */
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}
+.dot {
+  color: var(--Black, #000);
 
+  /* Text/Medium/Normal */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+.read-time {
+  color: var(--Black, #000);
+  /* Text/Small/Normal */
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}

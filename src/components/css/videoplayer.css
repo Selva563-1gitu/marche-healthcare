@@ -1,20 +1,25 @@
 .video-player {
-  width: 80%;
+  width: 100%;
+  /* padding: 0 10px; */
   position: relative;
 }
 
 .video-wrapper {
   width: 100%;
   margin: 0 auto;
-  height: auto;
-  border-radius: 16px;
+  /* height: auto;  */
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
+display: flex;
+flex-direction: column;
+  align-items: center;
 }
 
 .video-thumbnail {
   width: 100%;
   display: block;
+  border-radius: var(--border-radius-primary);
+
 }
 
 .play-button {
@@ -30,9 +35,9 @@
 
 .value-proposition .videotabbuttons {
   height: 10%;
-  position: absolute;
-  top: 75%;
-  right: 0%;
+  /* position: absolute; */
+  /* top: 75%;
+  right: 0%; */
   border-radius: 60px 0px 0px 60px;
   background: #fff;
   display: flex;

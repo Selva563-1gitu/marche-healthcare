@@ -1,11 +1,12 @@
 .product-functions {
   overflow: hidden;
+
 }
 .product-main {
   display: flex;
   padding: 0px 64px;
   align-items: center;
-  height: 900px;
+  height: 500px;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
@@ -22,8 +23,8 @@
 .product-main .content h1 {
   color: var(--White, var(--Colors-Text-white, #fff));
   /* Heading/H1 */
-  font-family: Roboto;
-  font-size: 56px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-banner-primary);
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
@@ -35,8 +36,8 @@
   color: var(--White, var(--Colors-Text-white, #fff));
 
   /* Text/Medium/Normal */
-  font-family: Roboto;
-  font-size: 18px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-paragraph-primary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -48,7 +49,10 @@
   justify-content: center;
   align-items: flex-start;
   gap: 80px;
-  padding: 80px 64px;
+  /* padding: 80px 64px; */
+  padding: 80px var(--page-margin-primary);
+
+
 }
 
 .product-action .short-about div {
@@ -58,8 +62,8 @@
 .product-action .short-about h2 {
   color: var(--Black, #000);
   /* Heading/H1 */
-  font-family: Roboto;
-  font-size: 56px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-banner-primary);
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
@@ -69,8 +73,8 @@
 .product-action .short-about p {
   color: var(--Black, #000);
   /* Text/Medium/Normal */
-  font-family: Roboto;
-  font-size: 18px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-paragraph-primary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -93,7 +97,9 @@
 }
 
 .functional {
-  padding: 112px 64px;
+  /* padding: 112px 64px; */
+  padding: 80px var(--page-margin-primary);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,8 +114,8 @@
 .functional .func-header h2 {
   margin-bottom: 24px;
   /* Heading/H2 */
-  font-family: Roboto;
-  font-size: 48px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-heading-primary);
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
@@ -118,8 +124,8 @@
 
 .functional .func-header p {
   /* Text/Medium/Normal */
-  font-family: Roboto;
-  font-size: 18px;
+  /* font-family: Roboto; */
+  font-size: var(--font-size-paragraph-primary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -128,7 +134,7 @@
 
 .functional-1 .content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -189,9 +195,22 @@
 }
 
 .functional-desc {
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 6em;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* margin-bottom: 6em; */
+  padding: 80px var(--page-margin-primary);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5em;
+}
+.functional-faq{
+  width: 100%;
+  /* margin: 0 auto; */
+  /* margin-bottom: 6em; */
+  /* padding: 80px var(--page-margin-primary); */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,16 +218,16 @@
 }
 
 .functional-desc .content,
-.functional-desc .content-img {
+.functional-faq .content-img {
   width: 50%;
 }
 
 .functional-desc .content h2 {
-  font-size: 48px;
+  font-size: var(--font-size-banner-primary);
 }
 
 .functional-desc .content p {
-  font-size: 18px;
+  font-size: var(--font-size-paragraph-primary);
   font-weight: 400;
   line-height: 150%;
 }
@@ -257,7 +276,7 @@
 
 .fav-footer button {
   padding: 12px 24px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
