@@ -92,7 +92,7 @@ const ProductPage = () => {
         <motion.div 
         initial={{opacity:0}} 
         animate={{opacity:1}} 
-        transition={{ delay:0.8,duration:1}} 
+        transition={{ delay:0.5,duration:1}} 
         className="content">
           <h1>Describe what your company does in a few words</h1>
           <p>
@@ -135,7 +135,7 @@ const ProductPage = () => {
           </div>
 
           <div className="content">
-            <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1, x:0}} transition={{delay:0.3,duration:0.3}} className="card">
+            <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1, x:0}} transition={{delay:0.1,duration:0.3}} className="card">
               <img src={blogImg} alt="blog" />
               <div className="card-body">
                 <h2>Blog title heading will go here</h2>
@@ -147,7 +147,7 @@ const ProductPage = () => {
               </div>
             </motion.div>
 
-            <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.3,duration:0.3}} className="card">
+            <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.1,duration:0.3}} className="card">
               <img src={blogImg} alt="blog" />
               <div className="card-body">
                 <h2>Blog title heading will go here</h2>
@@ -180,7 +180,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0}} transition={{delay:0.7,duration:0.7}}  className="functional-desc">
+        <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0}} transition={{delay:0.2,duration:0.7}}  className="functional-desc">
           <div className="content-img">
             <img src={functionl0Img} alt="functionl1Img" />
           </div>
@@ -198,7 +198,7 @@ const ProductPage = () => {
             </p>
           </div>
         </motion.div>
-        <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.7,duration:0.7}}  className="functional-desc">
+        <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.2,duration:0.7}}  className="functional-desc">
           <div className="content">
             <h2>Tell the visitor what the company name is about</h2>
             <p>
@@ -217,7 +217,7 @@ const ProductPage = () => {
           </div>
         </motion.div>
 
-        <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0}} transition={{delay:0.7,duration:0.7}}  className="functional-desc">
+        <motion.div initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0}} transition={{delay:0.2,duration:0.7}}  className="functional-desc">
           <div className="content-img">
             <img src={functionl2Img} alt="functionl1Img" />
           </div>
@@ -236,7 +236,7 @@ const ProductPage = () => {
           </div>
         </motion.div>
 
-        <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.7,duration:0.7}}  className="functional-desc">
+        <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{delay:0.2,duration:0.7}}  className="functional-desc">
           <div className="content">
             <h2>Tell the visitor what the company name is about</h2>
             <p>
@@ -268,7 +268,7 @@ const ProductPage = () => {
             <h2>Completet lineup</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
           </div>
-          <div className="functional-desc">
+          <div className="functional-faq">
             <div className="content-img">
               {faqProducts.map((faq, index) => {
                 return <FaqAccordion key={index} index={index} faq={faq} setAcc={setAccordion} currAcc={accordion} />;

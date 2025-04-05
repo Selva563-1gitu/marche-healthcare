@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Navigation,
@@ -9,8 +9,10 @@ import {
 } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "./css/carousel.css";
 import "swiper/swiper-bundle.css";
+import "swiper/css/pagination";
 import NewsCard from "./NewsCard";
 
 const blogCardDetails = [
@@ -24,7 +26,7 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
   {
     id: 2,
@@ -36,7 +38,7 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
   {
     id: 3,
@@ -48,7 +50,7 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
   {
     id: 1,
@@ -60,7 +62,7 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
   {
     id: 2,
@@ -72,7 +74,7 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
   {
     id: 3,
@@ -84,33 +86,104 @@ const blogCardDetails = [
     profile: "./companyLogo.png",
     names: "Marche Healthcare",
     date: "11 Jan 2022 ",
-    linkedin:"https://www.linkedin.com/company/marche-healthcare/",
+    linkedin: "https://www.linkedin.com/company/marche-healthcare/",
+  },
+];
+const videoCardDetials = [
+  {
+    id: 1,
+    link: "./image_magic.png",
+    name: "Magic - Natural Teath Whitening",
+    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+  },
+  {
+    id: 2,
+    link: "./image_laptop.png",
+    name: "Apple Laptop",
+    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+  },
+  {
+    id: 3,
+    link: "./image_phone.png",
+    name: "Apple IPhone",
+    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+  },
+  {
+    id: 4,
+    link: "./image_laptop.png",
+    name: "Apple Laptop",
+    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+  },
+  {
+    id: 5,
+    link: "./image_phone.png",
+    name: "Apple IPhone",
+    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+  },
+  {
+    id: 6,
+    link: "./image_magic.png",
+    name: "Magic - Natural Teath Whitening",
+    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+  },
+  {
+    id: 2,
+    link: "./image_laptop.png",
+    name: "Apple Laptop",
+    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+  },
+  {
+    id: 3,
+    link: "./image_phone.png",
+    name: "Apple IPhone",
+    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+  },
+  {
+    id: 4,
+    link: "./image_laptop.png",
+    name: "Apple Laptop",
+    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+  },
+  {
+    id: 5,
+    link: "./image_phone.png",
+    name: "Apple IPhone",
+    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+  },
+  {
+    id: 6,
+    link: "./image_magic.png",
+    name: "Magic - Natural Teath Whitening",
+    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
   },
 ];
 
-const videoCardDetials = [
-  { id: 1, link: "./videos/card-thumbnail.png", name: "Video name1" },
-  { id: 2, link: "./videos/card-thumbnail.png", name: "Video name2" },
-  { id: 3, link: "./videos/card-thumbnail.png", name: "Video name3" },
-  { id: 1, link: "./videos/card-thumbnail.png", name: "Video name1" },
-  { id: 2, link: "./videos/card-thumbnail.png", name: "Video name2" },
-  { id: 3, link: "./videos/card-thumbnail.png", name: "Video name3" },
-];
-
-
-
-const SwiperCarousel = ({ news }) => {
-
-  const [slideState,setSlideState] = useState({noOfSlide:3,navigation:true})
+const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle }) => {
+  const [slideState, setSlideState] = useState({
+    noOfSlide: 3,
+    navigation: true,
+  });
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 600) {
-        setSlideState((prevState) => ({ ...prevState, noOfSlide: 1, navigation: false }));
+        setSlideState((prevState) => ({
+          ...prevState,
+          noOfSlide: 1,
+          navigation: false,
+        }));
       } else if (window.innerWidth > 600 && window.innerWidth <= 770) {
-        setSlideState((prevState) => ({ ...prevState, noOfSlide: 2, navigation: false }));
+        setSlideState((prevState) => ({
+          ...prevState,
+          noOfSlide: 2,
+          navigation: false,
+        }));
       } else {
-        setSlideState((prevState) => ({ ...prevState, noOfSlide: 3, navigation: true }));
+        setSlideState((prevState) => ({
+          ...prevState,
+          noOfSlide: 3,
+          navigation: true,
+        }));
       }
     };
 
@@ -125,33 +198,79 @@ const SwiperCarousel = ({ news }) => {
   }, []);
 
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      autoplay={{ delay: 10000, disableOnInteraction: false }}
-      spaceBetween={0}
-      slidesPerView={slideState.noOfSlide}
-      navigation = {slideState.navigation}
-      pagination={{ clickable: true }}
-    >
-      {news
-        ? blogCardDetails.map((item, idx) => {
-            return (
-              <SwiperSlide key={Math.random() * idx}>
-                <NewsCard {...item} />
-              </SwiperSlide>
-            );
-          })
-        : videoCardDetials.map((item, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="card">
-                <img src={item.link} alt="card" />
-                <div className="card-body">
-                  <h2>{item.name}</h2>
+    <div>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        // autoplay={{ delay: 10000, disableOnInteraction: false }}
+        autoplay={false}
+        spaceBetween={30}
+        slidesPerGroup={3}
+        slidesPerView={slideState.noOfSlide}
+        // navigation={slideState.navigation}
+        pagination={{
+          // el: ".custom-pagination",
+          clickable: true,
+          renderBullet: (index, className) => {
+            return `<span class="${className} custom-bullet">${
+              index + 1
+            }</span>`;
+          },
+        }}
+        style={{
+          margin: "50px 0",
+          paddingBottom: "50px",
+        }}
+      >
+        {news
+          ? blogCardDetails.map((item, idx) => {
+              return (
+                <SwiperSlide key={Math.random() * idx}>
+                  <NewsCard {...item} />
+                </SwiperSlide>
+              );
+            })
+          : videoCardDetials.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <div
+                  className="card"
+                  onClick={(e) => {
+                    setVideoYtLink(item.play);
+                    setVideoTitle(item.name);
+                    const element = document.getElementById("youtubevideosection");
+                    if (element) {
+                      window.scrollTo({
+                        top: element.offsetTop,
+                        behavior: "smooth", // This makes the scrolling smooth
+                      });
+                    }
+                  }}
+                >
+                  <img
+                    src={item.link}
+                    alt="card"
+                    style={{ position: "relative" }}
+                  />
+                  <img
+                    className="playbutton"
+                    src="play_button.svg"
+                    style={{
+                      height: "50px",
+                      width: "50px",
+                      position: "absolute",
+                      left: "45%",
+                      top: "30%",
+                      transition: "scale .2s",
+                    }}
+                  />
+                  <div className="card-body">
+                    <h2>{item.name}</h2>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-    </Swiper>
+              </SwiperSlide>
+            ))}
+      </Swiper>
+      <div className="custom-pagination"></div>
+    </div>
   );
 };
 export default SwiperCarousel;

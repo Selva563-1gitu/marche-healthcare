@@ -1,14 +1,13 @@
 .logo-container1 {
   position: fixed;
   left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   transition: all 0.4s ease-in-out;
   
   /* 🔥 Bigger circle */
   width: 120px;  /* Increased size */
-  height: 120px; /* Increased size */
-  background-color: rgba(255, 255, 255, 1); /* White circle */
+  /* border-radius: 50%;  */
   
   display: flex;
   align-items: center;
@@ -19,8 +18,11 @@
 /* 🔥 When navbar expands, move the logo up and add glow */
 .navbar-expanded .logo-container1 {
   top: 0;
+  left: 100px;
   transform: translateY(50%);
-  border-radius: 50%; 
+  height: 120px;
+  border-radius: 50%;
+
   
   /* Slightly transparent white glow */
   background-color: rgba(255, 255, 255, 0.9);
@@ -66,7 +68,7 @@ body.scrolled {
 
 .navbar {
   width: 100%; /* Full width initially */
-  background: #FFFFFF; /* Dark background */
+  background: #f0f0f0;
   padding: 10px 0;
   display: flex;
   justify-content: center;
@@ -75,9 +77,10 @@ body.scrolled {
   top: 0;
   left: 50%; /* Ensure it stays centered */
   transform: translateX(-50%); /* Prevents shifting */
+  border-radius: 30px;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  overflow: hidden;
+  
 }
 
 /* Default Navbar */
@@ -101,7 +104,9 @@ body.scrolled {
   gap: 30px;
   margin: 0;
   padding: 0;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: min(5vw, 20px);
   
 }
 /* Navigation Links */
@@ -112,9 +117,7 @@ body.scrolled {
   gap: 20px;
   font-size: 18px;
   transition: font-size .2s ease-in-out;
-  &.onpage{
-    color: var(--primary);
-  }
+  
 }
 
 .nav-item {
@@ -135,10 +138,19 @@ body.scrolled {
 .nav-item:hover {
   color: #ffcc00;
 }
-.navbar-small .nav-link {
-  font-size: 15px;
-
+.navbar-small .nav-item {
+  font-size: clamp(12px, 1.2vw, 14px); /* Adjusts size based on viewport */
+  gap: 10px;
 }
+
+.navbar-small .nav-list {
+  gap: clamp(5px, 1.5vw, 15px); /* Adjusts spacing dynamically */
+}
+
+.navbar-small .nav-link {
+  font-size: clamp(12px, 1.2vw, 16px); /* Responsive text size */
+}
+
 
 /* Submenu */
 .submenu {
@@ -152,19 +164,14 @@ body.scrolled {
   transform: translateY(10px);
   transition: opacity 0.4s ease-in-out, transform 0.6s ease-in-out;
   pointer-events: none;
-}
-
-
-
-/* ====== SUBMENU STYLE (Removed background) ====== */
-.submenu {
-  position: absolute;
-  flex-wrap: wrap;
-  top: 40px;
-  left: 0;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap; /* Ensures wrapping if needed */
+  min-width: 150px; /* Prevents text overflow */
+  /* background: #fff; */
+  /* box-shadow: 0px 4px 8px rgba(0,0,0,0.2); */
 }
+
 .submenu-item {
   font-size: 16px;
   transform: translateY(10px);
@@ -207,7 +214,7 @@ li:hover .submenu-item {
 .navbar.navbar-expanded {
   height: 250px;
   align-items: flex-start ;
-  background-color: #560cf5;
+  background-color: var(--primary);
  
   
 }
@@ -216,14 +223,7 @@ li:hover .submenu-item {
   color: #f0f0f0;
 }
 
-.navbar-small .nav-item {
-  font-size: 12px;
-  gap : 10px
-}
-.navbar-small .nav-list {
-  
-  gap : 10px
-}
+
 /* ====== NAV LIST STYLE ====== */
 
 
@@ -262,5 +262,22 @@ li:hover .submenu-item {
     position: relative;
     top: 0;
     left: 0;
+  }
+}
+
+@media (max-width: 1024px) { /* Adjust breakpoint */
+  .navbar-small {
+    width: 60%; /* More width for small screens */
+  }
+
+  .nav-list {
+    gap: 15px; /* Reduce spacing */
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+
+  .nav-item {
+    white-space: nowrap; /* Prevent items from breaking into two lines */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncate long text */
   }
 }

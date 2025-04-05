@@ -13,6 +13,7 @@ import ProductPage from './pages/ProductPage';
 import NewsPage from './pages/NewsPage';
 import VideoPage from './pages/VideoPage';
 import ContactPage from './pages/ContactPage';
+import Timeline from './pages/Timeline';
 
 
 const router = createBrowserRouter([
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
     path: '/contact',
     element: <ContactPage />
   }
-])
+  , {
+    path: '/timeline',
+    element: <Timeline />
+  }
+],{basename:"/marche-healthcare/"})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

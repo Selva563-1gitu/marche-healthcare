@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./css/videopage.css";
 import { Layouts } from "../Layouts/Layouts";
 import VideoPlayer from "../components/VideoPlayer";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import SwiperCarousel from "../components/SwiperCarousel";
 import { motion } from "framer-motion";
 
@@ -10,25 +10,46 @@ const VIDEODATA = {
   product: {
     src: "./home/background-video.mp4",
     title: "Product Video",
-    description: "Learn more about our product through this comprehensive video.",
-    buttons: ["Feature1", "Feature2", "Feature3"]
+    description:
+      "Learn more about our product through this comprehensive video.",
+    buttons: ["Feature1", "Feature2", "Feature3"],
   },
   training: {
     src: "./videos/videobg.mp4",
     title: "Training Video",
     description: "Get trained with our step-by-step training videos.",
-    buttons: ["Module1", "Module2", "Module3"]
+    buttons: ["Module1", "Module2", "Module3"],
   },
   surgery: {
     src: "./home/background-video.mp4",
     title: "Surgery Video",
     description: "Watch detailed surgery videos for better understanding.",
-    buttons: ["Hello", "Hernia", "Thyroid", "Lung"]
+    buttons: ["Hello", "Hernia", "Thyroid", "Lung"],
   },
 };
 
 const VideoPage = () => {
-  const [videoLink, setVideoLink] = useState("surgery");
+  const [videoTitle,setVideoTitle]=useState("Magic - Natural Teath Whitening")
+  const [videoLink, setVideoLink] = useState("product");
+  const [videoUrl, setVideoUrl] = useState(
+    "https://youtu.be/3ivRlCAEr8s?feature=shared "
+  );
+  const [embedUrl, setEmbedUrl] = useState("");
+  useEffect(() => {
+    const videoId = extractVideoId(videoUrl);
+    if (videoId) {
+      setEmbedUrl(`https://www.youtube.com/embed/${videoId}`);
+    } else {
+      alert("Invalid YouTube URL. Please enter a valid link.");
+    }
+  }, [videoUrl]);
+
+  const extractVideoId = (url) => {
+    const match = url.match(
+      /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/watch\?v=)([\w-]{11})/
+    );
+    return match ? match[1] : null;
+  };
 
   function videoTabHandle(selectedButton) {
     setVideoLink(selectedButton);
@@ -45,11 +66,49 @@ const VideoPage = () => {
       }
     }
   }, [location]);
+  const videoCardDetials = [
+    {
+      id: 1,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name1",
+      play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+    },
+    {
+      id: 2,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name2",
+      play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+    },
+    {
+      id: 3,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name3",
+      play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+    },
+    {
+      id: 1,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name1",
+      play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+    },
+    {
+      id: 2,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name2",
+      play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+    },
+    {
+      id: 3,
+      link: "./videos/card-thumbnail.png",
+      name: "Video name3",
+      play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+    },
+  ];
 
   return (
     <Layouts title={"Video-Page"}>
-      <section className="banner">
-        <video src="./videos/videobg.mp4" autoPlay muted loop></video>
+      <section className="vid-banner">
+        <video src="./videos/bulb-vedio .mp4" autoPlay muted loop></video>
         <div className="banner-text">
           <h3>Videos</h3>
           <p>
@@ -117,22 +176,32 @@ const VideoPage = () => {
           </div>
         </div>
         <div className="video-section">
-          <div className="video-section-header">
+          {/* <div className="video-section-header">
             <h2>Video Title</h2>
             <p>
               Gain insights into our products functionality and benefits via our
               video showcase
             </p>
+          </div> */}
+          <div style={{ height: "100vh", margin: "4em auto" }} id="youtubevideosection">
+            {embedUrl && (
+              <iframe
+                width="100%"
+                height="100%"
+                src={embedUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
-          <div className="video-player">
-            <div className="video-wrapper">
-              <VideoPlayer src={VIDEODATA[videoLink].src} />
-            </div>
+          <div>
+            <h1 style={{ textAlign: "left", marginTop: "-50px" }}>
+              {videoTitle}
+            </h1>
           </div>
-
-          <div className="card-group">
-            <SwiperCarousel news={false} />
-          </div>
+          <SwiperCarousel setVideoYtLink={setVideoUrl} setVideoTitle={setVideoTitle} /> 
         </div>
       </section>
     </Layouts>

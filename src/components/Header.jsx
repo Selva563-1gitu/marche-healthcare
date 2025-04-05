@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./css/header.css";
-import logo from "../assets/logo.png";
-import circleLogo from "../assets/Marche logo-circle.png";
+import logo from "../assets/logo.png"; 
 
 const Nav = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -26,35 +26,34 @@ const Nav = () => {
       title: "About",
       path: "/about",
       subItems: [
-        { name: "Story", path: "/about#story" },
-        { name: "Purpose", path: "/about#purpose" },
-        { name: "Mission", path: "/about#mission" },
-        { name: "Vision", path: "/about#vision" },
-        { name: "Imaya", path: "/about#imaya" },
+        { name: "Story", path: "/about#ourstory" },
+        { name: "Purpose", path: "/about#ourpurpose" },
+        { name: "Mission", path: "/about#ourmission" },
+        { name: "Vision", path: "/about#ourvision" },
+        { name: "Team", path: "/about#ourteam" }
       ],
     },
-    {
-      title: "Media Center",
-      path: "/news",
-      subItems: [
-        { name: "Social Media", path: "/news#social" },
-        { name: "News & Events", path: "/news#news" },
-      ],
-    },
+    
     {
       title: "Products",
       path: "/products",
       subItems: [{ name: "Marche Robo", path: "/products#marche-robo" }],
     },
     { title: "Videos", path: "/videos", subItems: [] },
-    { title: "Contact", path: "/contact", subItems: [] },
+    {
+      title: "BroadCast",
+      path: "/news",
+      subItems: [
+        { name: "Social Media", path: "/news#socialmedia" },
+        { name: "News & Events", path: "/news#newsandevents" },
+      ],
+    },
+    { title: "Contact", path: "/contact", subItems: [] }
   ];
 
   return (
     <nav
-      className={`navbar ${
-        isHovered ? "navbar-expanded" : isScrolled ? "navbar-small" : ""
-      }`}
+      className={`navbar ${isHovered ? "navbar-expanded" : isScrolled ? "navbar-small" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -62,41 +61,21 @@ const Nav = () => {
       }}
     >
       {/* Logo added here */}
-      <div
-        className={`logo-container1 ${
-          isScrolled && !isHovered ? "hide-logo" : ""
-        }`}
-      >
+      <div className={`logo-container1 ${isScrolled && !isHovered ? "hide-logo" : ""}`}>
         <Link to="/">
-          <img
-            src={isHovered ? circleLogo : logo}
-            alt="Logo"
-            className="logo"
-          />
+          <img src={logo} alt="Logo" className="logo" />
         </Link>
       </div>
 
       <ul className="nav-list">
         {menuItems.map((item, index) => (
-          <li
-            key={index}
-            className="nav-item"
-            onMouseEnter={() => setActiveMenu(index)}
-          >
-            <NavLink
-              to={item.path}
-              className={({ isActive }) =>
-                isActive ? "nav-link onpage" : "nav-link"
-              }
-              onClick={scrollToTop}
-            >
+          <li key={index} className="nav-item" onMouseEnter={() => setActiveMenu(index)}>
+            <NavLink to={item.path} className=" nav-link" onClick={scrollToTop}>
               {item.title}
             </NavLink>
 
             {item.subItems.length > 0 && (
-              <div
-                className={`submenu ${activeMenu === index ? "show" : "hide"}`}
-              >
+              <div className={`submenu ${activeMenu === index ? "show" : "hide"}`}>
                 {item.subItems.map((sub, subIndex) => (
                   <div
                     key={subIndex}
