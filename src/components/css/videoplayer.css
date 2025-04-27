@@ -51,14 +51,6 @@ flex-direction: column;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 770px) {
-  .video-player{
-    width: 90%;
-  }
-  .play-button {
-    width: 17%;
-  }
-}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -66,14 +58,12 @@ flex-direction: column;
     width: 100%;
   }
 
-  .play-button {
-    width: 30%;
-  }
   .value-proposition .videotabbuttons {
     background-color: transparent;
   }
  
   .value-proposition .video-tabbutton{
-    font-size: .6rem;
+    font-size: 0.7rem;
   }
+  
 }

@@ -13,7 +13,7 @@ import "swiper/css";
 import "./css/carousel.css";
 import "swiper/swiper-bundle.css";
 import "swiper/css/pagination";
-import NewsCard from "./NewsCard";
+import NewsCard from "./MediaCard";
 
 const blogCardDetails = [
   {
@@ -89,76 +89,8 @@ const blogCardDetails = [
     linkedin: "https://www.linkedin.com/company/marche-healthcare/",
   },
 ];
-const videoCardDetials = [
-  {
-    id: 1,
-    link: "./image_magic.png",
-    name: "Magic - Natural Teath Whitening",
-    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
-  },
-  {
-    id: 2,
-    link: "./image_laptop.png",
-    name: "Apple Laptop",
-    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
-  },
-  {
-    id: 3,
-    link: "./image_phone.png",
-    name: "Apple IPhone",
-    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
-  },
-  {
-    id: 4,
-    link: "./image_laptop.png",
-    name: "Apple Laptop",
-    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
-  },
-  {
-    id: 5,
-    link: "./image_phone.png",
-    name: "Apple IPhone",
-    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
-  },
-  {
-    id: 6,
-    link: "./image_magic.png",
-    name: "Magic - Natural Teath Whitening",
-    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
-  },
-  {
-    id: 2,
-    link: "./image_laptop.png",
-    name: "Apple Laptop",
-    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
-  },
-  {
-    id: 3,
-    link: "./image_phone.png",
-    name: "Apple IPhone",
-    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
-  },
-  {
-    id: 4,
-    link: "./image_laptop.png",
-    name: "Apple Laptop",
-    play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
-  },
-  {
-    id: 5,
-    link: "./image_phone.png",
-    name: "Apple IPhone",
-    play: "https://youtu.be/hmPEH57VuV0?feature=shared",
-  },
-  {
-    id: 6,
-    link: "./image_magic.png",
-    name: "Magic - Natural Teath Whitening",
-    play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
-  },
-];
 
-const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle }) => {
+const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle,videoCardDetials,videoLink,classification }) => {
   const [slideState, setSlideState] = useState({
     noOfSlide: 3,
     navigation: true,
@@ -204,7 +136,7 @@ const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle }) => {
         // autoplay={{ delay: 10000, disableOnInteraction: false }}
         autoplay={false}
         spaceBetween={30}
-        slidesPerGroup={3}
+        slidesPerGroup={slideState.noOfSlide}
         slidesPerView={slideState.noOfSlide}
         // navigation={slideState.navigation}
         pagination={{
@@ -229,7 +161,7 @@ const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle }) => {
                 </SwiperSlide>
               );
             })
-          : videoCardDetials.map((item, idx) => (
+          : videoCardDetials[videoLink][classification]?videoCardDetials[videoLink][classification].map((item, idx) => (
               <SwiperSlide key={idx}>
                 <div
                   className="card"
@@ -267,7 +199,7 @@ const SwiperCarousel = ({ news, setVideoYtLink, setVideoTitle }) => {
                   </div>
                 </div>
               </SwiperSlide>
-            ))}
+            )):<></>}
       </Swiper>
       <div className="custom-pagination"></div>
     </div>

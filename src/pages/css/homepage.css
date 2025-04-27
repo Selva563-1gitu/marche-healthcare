@@ -48,7 +48,7 @@
 
 .value-proposition .value-column {
   display: flex;
-  width: 768px;
+  /* width: 768px; */
   flex-direction: column;
   align-items: center;
 }
@@ -146,7 +146,6 @@
 }
 
 .home-our-team .team-paragraph {
-  width: 708.657px;
   color: #fffcfc;
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
@@ -237,47 +236,6 @@
   width: 100%;
   padding: 80px var(--page-margin-primary);
 }
-.testmonialslide .swipersingle-div {
-  background-color: #5d5dff;
-  border-radius: var(--border-radius-primary);
-  background-image: url("/testimonialbg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  /* background-size: cover; */
-  /* height: 600px; */
-  display: flex;
-  gap: 45px;
-  padding: 50px;
-  .wording-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    padding: 100px;
-    p {
-      font-size: var(--font-size-paragraph-primary);
-      font-style: normal;
-      /* font-weight: 500; */
-      line-height: 23px;
-      color: #ffffff;
-    }
-    .author-div {
-      display: flex;
-      align-items: flex-end;
-      gap: 15px;
-      h3 {
-        font-size: 24px;
-        color: white;
-      }
-      p {
-        font-size: 18px;
-      }
-    }
-  }
-  img {
-    border-radius: var(--border-radius-primary);
-  }
-}
 .our-partners {
   padding: 10em 0;
   /* margin-top: 7em; */
@@ -294,9 +252,6 @@
   line-height: 80%; /* 105.6px */
 }
 
-.our-partners .section-header {
-  margin: 10px 50px;
-}
 
 .our-partners .partner-content {
   display: inline-flex;
@@ -433,7 +388,6 @@
 .blogs-and-events .blog-card-1 {
   width: 100%;
   display: flex;
-  height: 433px;
   padding: 0.7em;
   justify-content: center;
   border-radius: var(--border-radius-primary);
@@ -441,9 +395,8 @@
 }
 
 .blogs-and-events .blog-image-1 {
+  width: 533px;
   margin-left: 0px;
-  width: 600px;
-  height: 410px;
   flex-shrink: 0;
   border-radius: var(--border-radius-primary);
   background: url("../assets/blog-image1.png") lightgray 50% / cover no-repeat;
@@ -581,10 +534,18 @@
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 770px) {
-  .spacedivider {
-    padding-top: 3em;
+
+@media screen and (max-width:1200px) {
+  .team-cards-container .team-cards{
+    display: flex;
+    flex-direction: column;
   }
+  .blog-card-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 770px) {
   .main-content {
     width: 100%;
     padding: 0.5em;
@@ -601,25 +562,18 @@
   .home-our-team .team-header {
     width: 100%;
   }
-  .home-our-team .team-cards {
-    width: 50%;
-    flex-wrap: wrap;
-  }
 
   .our-partners .partners-logos {
     width: 100%;
     justify-content: center;
   }
 
-  .blogs-and-events .blog-card-1 {
-    flex-direction: column;
-    height: auto;
-  }
 
   .blogs-and-events .blog-image-1 {
     width: 100%;
     height: auto;
     margin: 0 auto;
+    /* align-self: center; */
   }
 
   .blogs-and-events .blog-frame-column {
@@ -645,14 +599,6 @@
     padding-top: 0;
   }
 
-  .home-our-team .overlay {
-    padding: 5em 0;
-  }
-  .home-our-team .team-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .home-our-team .team-header {
     gap: 2em;
   }
@@ -660,7 +606,64 @@
     font-size: 3rem;
   }
 
-  .home-our-team .team-paragraph {
-    width: 25%;
+  .author{
+    font-size: 12px;
+  
   }
+  .title{
+    font-size: 30px;
+    margin-top: -20px;
+  }
+  .topic{
+    font-size: 30px;
+  }
+  .team-heading {
+    font-size:35px ;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: -83px;
+}
+.background-video{
+  display: none;
+}
+.team-header{
+  color: black; 
+  display: none;
+}
+.team-paragraph{
+  color:#000;
+  display: none;
+}
+.testmonialslide {
+  padding: 0px var(--page-margin-primary);
+}
+.marche-values-div {
+  margin: 0px var(--page-margin-primary);
+}
+.team-card{
+  transform: translateX(-10px) translateY(10px);
+}
+
+.our-partners {
+ 
+  padding: 80px var(--page-margin-primary);
+}
+
+.swiper-slide {
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+.testmonialslide{
+  padding:0 10px;
+}
+.value-proposition,.blogs-and-events{
+  margin: 100px 20px;
+}
+.our-partners{
+  padding:100px 20px;
+}
+.overlay{
+  margin-top: -230px;
+}
 }

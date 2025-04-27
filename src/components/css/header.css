@@ -1,3 +1,7 @@
+.master-navbar{
+  
+}
+
 .logo-container1 {
   position: fixed;
   left: 20px;
@@ -77,26 +81,27 @@ body.scrolled {
   top: 0;
   left: 50%; /* Ensure it stays centered */
   transform: translateX(-50%); /* Prevents shifting */
-  border-radius: 30px;
+  border-radius: 20px;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
+  padding: 0 25px;
   
 }
 
 /* Default Navbar */
 
-/* Navbar Shrinks when Scrolling */
-
+/* Navbar Shrinks on Scroll */
 .navbar-small {
-  width: 45%; /* Shrink width */
+  width: 80%;
   justify-content: center;
-  align-items: center;
   padding: 1px 0;
-  border-radius: 30px; /* Rounded edges */
+  border-radius: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #f0f0f0; /* Slight transparency */
+  background: #f0f0f0;
+  padding: 0 25px;
 }
+
 
 .nav-list {
   list-style: none;
@@ -223,6 +228,11 @@ li:hover .submenu-item {
   color: #f0f0f0;
 }
 
+/* ========== DESKTOP VIEW (DEFAULT) ========== */
+.hamburger-icon {
+  display: none; /* hide by default */
+}
+
 
 /* ====== NAV LIST STYLE ====== */
 
@@ -249,27 +259,36 @@ li:hover .submenu-item {
   color: #ffcc00;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .submenu {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
+.nav-list-smallsize{
+  position: absolute;
+  top:50px;
+  left:0px;
+  background-color: #f0f0f0;
+  width: 100%;
+  border-radius: 50px;
+  background-color: var(--primary);
+  /* color: white; */
 }
 
-@media (max-width: 1024px) { /* Adjust breakpoint */
+.navbar-bg-primary{
+  /* background-color: var(--primary); */
+  border-radius: 20px 20px 0 0;
+}
+@media (max-width: 1080px) { /* Adjust breakpoint */
+  .navbar{
+  justify-content: flex-end;
+
+  }
   .navbar-small {
     width: 60%; /* More width for small screens */
-  }
-
+  justify-content: flex-end;
+}
+.nav-list-smallsize{
+  background-color: #f0f0f0;
+  border-radius: 0 0 20px 20px;
+  /* width: 100vw; */
+  /* left:-100px; */
+}
   .nav-list {
     gap: 15px; /* Reduce spacing */
     flex-wrap: wrap; /* Allow items to wrap */

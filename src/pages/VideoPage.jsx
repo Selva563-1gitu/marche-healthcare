@@ -29,8 +29,13 @@ const VIDEODATA = {
 };
 
 const VideoPage = () => {
-  const [videoTitle,setVideoTitle]=useState("Magic - Natural Teath Whitening")
+  const [videoTitle, setVideoTitle] = useState(
+    "Magic - Natural Teath Whitening"
+  );
   const [videoLink, setVideoLink] = useState("product");
+  const [classification, setClassification] = useState(
+    VIDEODATA[videoLink].buttons[0]
+  );
   const [videoUrl, setVideoUrl] = useState(
     "https://youtu.be/3ivRlCAEr8s?feature=shared "
   );
@@ -65,45 +70,390 @@ const VideoPage = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [location]);
-  const videoCardDetials = [
+  }, [location, classification]);
+  useEffect(() => {
+    setClassification(VIDEODATA[videoLink].buttons[0]);
+  }, [videoLink]);
+  const videoCards = [
     {
-      id: 1,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name1",
-      play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+      idName: "product",
+      name: "Product Video",
     },
     {
-      id: 2,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name2",
-      play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+      idName: "surgery",
+      name: "Surgery Video",
     },
     {
-      id: 3,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name3",
-      play: "https://youtu.be/hmPEH57VuV0?feature=shared",
-    },
-    {
-      id: 1,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name1",
-      play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
-    },
-    {
-      id: 2,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name2",
-      play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
-    },
-    {
-      id: 3,
-      link: "./videos/card-thumbnail.png",
-      name: "Video name3",
-      play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+      idName: "training",
+      name: "Training Video",
     },
   ];
+  const videoCardDetials = {
+    product: {
+      Feature1: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 6,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+      ],
+      Feature2: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+      ],
+      Feature3: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+      ],
+    },
+    surgery: {
+      Hello: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 6,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+      ],
+      Hernia: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+      ],
+      Thyroid: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+      ],
+      Lung: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 6,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 7,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 8,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+      ],
+    },
+    training: {
+      Module1: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 6,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+      ],
+      Module2: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+      ],
+      Module3: [
+        {
+          id: 1,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 2,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+        {
+          id: 3,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name3",
+          play: "https://youtu.be/hmPEH57VuV0?feature=shared",
+        },
+        {
+          id: 4,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name1",
+          play: "https://youtu.be/3ivRlCAEr8s?feature=shared ",
+        },
+        {
+          id: 5,
+          link: "./videos/card-thumbnail.png",
+          name: "Video name2",
+          play: "https://youtu.be/-k3x_1pAs6Q?feature=shared",
+        },
+      ],
+    },
+  };
+
+  const [mobileView, setMobileView] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setMobileView(true);
+      } else {
+        setMobileView(false);
+      }
+    };
+
+    // Initial call to set initial state based on window width
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Layouts title={"Video-Page"}>
@@ -120,59 +470,88 @@ const VideoPage = () => {
       <section className="video-gallery">
         <div className="category">
           <div id="productvideo" className="category-container">
-            <button
-              className={
-                videoLink === "product"
-                  ? "btn-outline-rounded active"
-                  : "btn-outline-rounded "
-              }
-              onClick={() => {
-                videoTabHandle("product");
-              }}
-            >
-              Product Video
-            </button>
-            <button
-              className={
-                videoLink === "training"
-                  ? "btn-outline-rounded active"
-                  : "btn-outline-rounded "
-              }
-              onClick={() => {
-                videoTabHandle("training");
-              }}
-            >
-              Training Video
-            </button>
-            <button
-              className={
-                videoLink === "surgery"
-                  ? "btn-outline-rounded active"
-                  : "btn-outline-rounded "
-              }
-              onClick={() => {
-                videoTabHandle("surgery");
-              }}
-            >
-              Surgery Video
-            </button>
+            {mobileView ? (
+              <select
+                className="btn-outline-rounded"
+                value={videoLink}
+                onChange={(e) => setVideoLink(e.target.value)}
+              >
+                {videoCards.map((card) => (
+                  <option value={card.idName}>{card.name}</option>
+                ))}
+              </select>
+            ) : (
+              videoCards.map((card) => (
+                <button
+                  className={
+                    videoLink === card.idName
+                      ? "btn-outline-rounded dark"
+                      : "btn-outline-rounded "
+                  }
+                  onClick={() => {
+                    videoTabHandle(card.idName);
+                  }}
+                >
+                  {card.name}
+                </button>
+              ))
+            )}
           </div>
         </div>
         <div className="sub-category">
           <h2>{VIDEODATA[videoLink].title}</h2>
           <p>{VIDEODATA[videoLink].description}</p>
           <div className="button-group">
-            {VIDEODATA[videoLink].buttons.map((buttonText, index) => (
-              <motion.button
-                key={buttonText}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.1, delay: index * 0.5 }}
+            {mobileView ? (
+              <select
                 className="btn-outline-rounded"
+                value={classification}
+                onChange={(e) => {
+                  setClassification(e.target.value);
+                  const element = document.getElementById(
+                    "youtubevideosection"
+                  );
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth", // This makes the scrolling smooth
+                    });
+                  }
+                }}
               >
-                {buttonText}
-              </motion.button>
-            ))}
+                {VIDEODATA[videoLink].buttons.map((buttonText, index) => (
+                  <option value={buttonText}>{buttonText}</option>
+                ))}
+              </select>
+            ) : (
+              VIDEODATA[videoLink].buttons.map((buttonText, index) => (
+                <motion.button
+                  key={buttonText}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.1, delay: index * 0.5 }}
+                  className={
+                    classification === buttonText
+                      ? "btn-outline-rounded dark"
+                      : "btn-outline-rounded"
+                  }
+                  onClick={(e) => {
+                    setClassification(e.target.textContent);
+                    const element = document.getElementById(
+                      "youtubevideosection"
+                    );
+                    if (element) {
+                      window.scrollTo({
+                        top: element.offsetTop,
+                        behavior: "smooth", // This makes the scrolling smooth
+                      });
+                    }
+                  }}
+                >
+                  {buttonText}
+                </motion.button>
+              ))
+            )}
           </div>
         </div>
         <div className="video-section">
@@ -183,7 +562,10 @@ const VideoPage = () => {
               video showcase
             </p>
           </div> */}
-          <div style={{ height: "100vh", margin: "4em auto" }} id="youtubevideosection">
+          <div
+            // style={{ height: "100vh", margin: "4em auto" }}
+            id="youtubevideosection"
+          >
             {embedUrl && (
               <iframe
                 width="100%"
@@ -201,7 +583,13 @@ const VideoPage = () => {
               {videoTitle}
             </h1>
           </div>
-          <SwiperCarousel setVideoYtLink={setVideoUrl} setVideoTitle={setVideoTitle} /> 
+          <SwiperCarousel
+            setVideoYtLink={setVideoUrl}
+            setVideoTitle={setVideoTitle}
+            videoCardDetials={videoCardDetials}
+            videoLink={videoLink}
+            classification={classification}
+          />
         </div>
       </section>
     </Layouts>

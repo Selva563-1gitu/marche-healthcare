@@ -282,7 +282,13 @@
   font-weight: 400;
   border: 1px solid var(--Black, #000);
 }
-
+@media screen and (max-width:1100px) {
+  .product-main{
+    .content{
+      width:100%
+    }
+  }
+}
 /* Medium devices (landscape tablets, 770px and up) */
 @media only screen and (max-width: 770px) {
   .product-main .content{
@@ -330,6 +336,7 @@
 @media only screen and (max-width: 600px) {
   .product-main {
     padding: 0 1em;
+    height: 300px;
   }
   .product-main .content {
     width: 100%;
@@ -343,6 +350,10 @@
     width: 100%;
   }
 
+  /* .product-action{
+    margin: 0px 45px;
+  } */
+
   .product-action .short-about {
     padding: 3em 1em;
     flex-direction: column;
@@ -355,9 +366,66 @@
   .functional-1 .content {
     flex-direction: column;
     gap: 2em;
+    margin-top: -50px;
   }
 
   .functional-1 .card{
     width: 100%;
   }
+  .product-main .content h1 {
+    font-size: 2.5rem;
+  }
+  .product-main .content p {
+    font-size: 1rem;
+  }
+  .product-action .short-about h2 {
+    font-size: 2.5rem;
+  }
+  .product-action .short-about p {
+    font-size: 1rem;
+    margin-top: -50px;
+  }
+  .product-range-action {
+    height: 200px;
+  }
+  .functional {
+    padding: 1em 1em;
+}
+  .functional .func-header h2 {
+    font-size: 2.5rem;
+  }
+  .functional .func-header p {
+    font-size: 1rem;
+  }
+  .functional-2 .content{
+    margin-top: -50px;
+  }
+  .functional-desc .content h2 {
+    margin-top: -50px;
+    font-size: 2rem;
+}
+.functional-desc .content p {
+  font-size: 1rem;
+}
+.functional-desc{
+  padding: 30px 20px
+}
+.functional-3 img {
+  height: 180px;
+}
+.functional-faq{
+  display: inline-block;
+}
+.functional-faq .content-img ,.asked-questions .content, .fav-question .func-header{
+  width: 100%;
+}
+.functional-faq .content-img{
+  margin-bottom: 50px;
+}
+.fav-question .func-header{
+  margin-bottom: 0px;
+}
+.fav-footer {
+  margin-top: 30px;
+}
 }

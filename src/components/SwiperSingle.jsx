@@ -75,7 +75,7 @@ const SwiperSingle = ({ testmonial }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      autoplay={{ delay: 10000, disableOnInteraction: false }}
+      autoplay={{ delay: 100000, disableOnInteraction: false }}
       spaceBetween={0}
       slidesPerView={1}
       navigation

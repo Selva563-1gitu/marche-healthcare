@@ -7,6 +7,8 @@
   align-items: center;
   gap: 25.074px;
   align-self: stretch;
+  transition: all 0.3s;
+  /* background-color: wheat; */
   &:hover {
     .card-social {
       fill: var(--primary);
@@ -54,11 +56,14 @@
 
 .newspagecardcontainer {
   width: 100%;
-  padding: 80px var(--page-margin-primary);
+  padding: 20px var(--page-margin-primary);
   /* padding: 3em; */
 }
 .newspagecardcontainer .swiper-pagination {
   text-align: center;
+}
+#media-link:hover{
+  color:black
 }
 /* Medium devices (landscape tablets, 770px and up) */
 @media only screen and (max-width: 770px) {
@@ -84,18 +89,14 @@
     gap: 0;
   }
 
-  .newspagecardcontainer {
-    width: 100%;
-    padding: 0;
-  }
   .newspagecardcontainer .swiper-pagination {
     bottom: 10px !important;
     text-align: center;
   }
 
-  .newspagecardcontainer .blog-card {
+  /* .newspagecardcontainer .blog-card {
     height: 55vh;
-  }
+  } */
 }
 
 /* Extra small devices (phones, 600px and down) */

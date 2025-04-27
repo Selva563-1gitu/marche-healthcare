@@ -138,19 +138,39 @@ button {
   line-height: 150%;
   /* 27px */
 }
-
+.cards-in-contactpage .contact-card{
+  width: 200px;
+}
 
 
 /* Medium devices (landscape tablets, 770px and up) */
 @media only screen and (max-width: 770px) {
-  .spacedivider{
-    margin-top: 8em;
+  .section-header h2{
+    font-size: 3.5rem;
+  }
+
+  .section-header p{
+    font-size: 1.5rem;
   }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .spacedivider{
-    margin-top: 5em;
+
+  .backtotop {
+    right: 20px;
+    bottom: 30px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  .section-header h2{
+    font-size: 2.5rem;
+    
+  }
+  .section-header p{
+    font-size: 1rem
   }
 }
+

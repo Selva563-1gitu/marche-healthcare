@@ -180,7 +180,7 @@
     width: 97%;
   }
   .testmonial-card .review {
-    font-size: 1.7vh;
+    font-size: 0.9rem;
     font-weight: normal;
     line-height: 1.5em;
   }
@@ -188,9 +188,6 @@
     font-size: 1em;
   }
 
-  .testmonialslide .swiper{
-    height: 55vh;
-  } 
   .testmonialslide .swiper-pagination {
     bottom: 0px!important;
   }
@@ -201,7 +198,7 @@
  
   .testmonial-card {
     border-radius: 34px;
-    padding: 1em;
+    padding: 2em 1em;
     flex-direction: column-reverse;
     width: 100%;
     background: transparent;
@@ -249,9 +246,6 @@
     display: none;
   }
 
-  .testmonialslide .swiper{
-    height: 75vh;
-  } 
 
   .testmonialslide .swiper-button-prev,
   .swiper-button-next {
@@ -263,4 +257,10 @@
   }
 
   
+}
+@media screen and (max-width:400px) {
+  .testmonial-card img{
+    width: 80%;
+    height: 50%;
+  }
 }

@@ -126,6 +126,21 @@ padding-left:1em ;
 }
 
 
+.userdetailslogos:hover{
+  fill: var(--primary);
+}
+.user-full-fhalf{
+  /* padding: 100px; */
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+}
+@media screen and (max-width:1018px) {
+  .user-full-fhalf{
+    flex-direction: column;
+  }
+}
 
 /* Medium devices (landscape tablets, 770px and up) */
 @media only screen and (max-width: 770px) {
@@ -172,7 +187,4 @@ padding-bottom: 3em;
   }
 
  
-}
-.userdetailslogos:hover{
-  fill: var(--primary);
 }
