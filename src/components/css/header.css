@@ -7,7 +7,7 @@
   left: 20px;
   /* top: 50%; */
   /* transform: translateY(-50%); */
-  transition: all 0.4s ease-in-out;
+  /* transition: all 0.4s ease-in-out; */
   
   /* 🔥 Bigger circle */
   width: 120px;  /* Increased size */
@@ -81,7 +81,7 @@ body.scrolled {
   top: 0;
   left: 50%; /* Ensure it stays centered */
   transform: translateX(-50%); /* Prevents shifting */
-  border-radius: 20px;
+  border-radius: 30px;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
   padding: 0 25px;
@@ -92,10 +92,10 @@ body.scrolled {
 
 /* Navbar Shrinks on Scroll */
 .navbar-small {
-  width: 80%;
+  width: fit-content;
   justify-content: center;
   padding: 1px 0;
-  border-radius: 20px;
+  border-radius: 30px;
   left: 50%;
   transform: translateX(-50%);
   background: #f0f0f0;
@@ -109,7 +109,7 @@ body.scrolled {
   gap: 30px;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: min(5vw, 20px);
   
